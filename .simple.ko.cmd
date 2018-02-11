@@ -1,1 +1,0 @@
-cmd_/home/mckennon/kernalModule/simple.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/mckennon/kernalModule/simple.ko /home/mckennon/kernalModule/simple.o /home/mckennon/kernalModule/simple.mod.o ;  true

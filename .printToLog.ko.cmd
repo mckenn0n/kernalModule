@@ -1,1 +1,0 @@
-cmd_/home/mckennon/kernalModule/printToLog.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/mckennon/kernalModule/printToLog.ko /home/mckennon/kernalModule/printToLog.o /home/mckennon/kernalModule/printToLog.mod.o ;  true
