@@ -20,6 +20,7 @@ int simple_init(void){
 	struct birthday *personThree;
 	struct birthday *personFour;
 	struct birthday *personFive;
+	struct birthday *ptr, *next;
 
 	person = kmalloc(sizeof(*person), GFP_KERNEL);
 	person->day = 19;
@@ -61,8 +62,13 @@ int simple_init(void){
 
 	list_add_tail(&personFive->list, &birthday_list);
 
-
 	printk(KERN_INFO "Loading Module\n");
+
+	list_for_each_entry_safe(ptr,next,&birthday_list,list){
+		printk(KERN_INFO "Birthday is: Day:%d Month:%d Year:%d\n", ptr->day, ptr->month, ptr->year);
+		list_del(&ptr->list);
+		kfree(ptr);
+	}
 
     return 0;
 }
